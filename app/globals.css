@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --font-playfair: 'Playfair Display', serif;
+
+  /* Light clean author theme */
+  --bg: #ffffff;
+  --text: #111111;
+  --red: #7a1424;
+  --red-hover: #9c1a2e;
+}
+
+@layer base {
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-playfair);
+  }
+}
+
+@layer utilities {
+  /* soft red hover shadow */
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_10px_rgba(122,20,36,0.25)];
+  }
+}
