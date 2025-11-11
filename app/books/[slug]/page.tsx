@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { books } from '@/data/books'
 import ExpandableText from '@/components/ExpandableText'
+import AmazonButton from '@/components/AmazonButton'
 
 export function generateStaticParams() {
   return books.map((book) => ({
@@ -22,6 +23,8 @@ export default function BookPage({ params }: PageProps) {
   if (!book) {
     notFound()
   }
+
+  const amazonUrl = book.amazonUrl || book.link || ''
 
   return (
     <div className="min-h-screen py-20 bg-white">
@@ -48,7 +51,7 @@ export default function BookPage({ params }: PageProps) {
           </div>
 
           <div className="space-y-4">
-            <h1 className="font-display text-3xl md:text-4xl font-bold text-black">
+            <h1 className="font-display text-2xl md:text-3xl font-bold text-black">
               {book.title}
             </h1>
 
@@ -69,16 +72,11 @@ export default function BookPage({ params }: PageProps) {
               <ExpandableText text={book.fullDescription} maxLength={200} />
             </div>
 
-            <div className="pt-6 border-t border-gray-200">
-              <Link
-                href={book.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-redAccent hover:bg-redAccentHover text-white font-display uppercase tracking-wider transition-all duration-300 hover-glow rounded-sm"
-              >
-                Purchase on Amazon
-              </Link>
-            </div>
+            {amazonUrl && (
+              <div className="pt-6 border-t border-gray-200">
+                <AmazonButton href={amazonUrl} />
+              </div>
+            )}
           </div>
         </div>
       </div>

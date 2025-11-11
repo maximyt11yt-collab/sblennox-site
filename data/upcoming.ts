@@ -11,10 +11,10 @@ export type Upcoming = {
 
 export const upcoming: Upcoming[] = [
   {
-    slug: "kiss-me-like-i-didnt-kill-you",
-    title: "Kiss Me Like I Didn't Kill You",
-    // Place this image in /public/upcoming/ exactly as named (case-sensitive on deploy):
-    coverImage: "/upcoming/IMG_2478.JPG",
+    slug: "kiss-me-like-you-didnt-break-me",
+    title: "Kiss Me Like You Didn't Break Me",
+    coverImage: "/upcoming/upcomingnew.JPG",
+    tagline: "Title reveal — details coming soon.",
   },
 ];
 

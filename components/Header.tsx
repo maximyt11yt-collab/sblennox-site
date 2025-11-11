@@ -3,13 +3,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 
 export default function Header() {
   const pathname = usePathname()
+  const [imageError, setImageError] = useState(false)
 
   const navLinks = [
     { href: '/', label: 'Home', anchor: null },
-    { href: '/books', label: 'Books', anchor: '#books' },
+    { href: '/books', label: 'Books', anchor: null },
     { href: '/upcoming', label: 'Upcoming Releases', anchor: '#upcoming-releases' },
     { href: '/about', label: 'About', anchor: '#about' },
     { href: '/contact', label: 'Contact', anchor: '#contact' },
@@ -29,15 +31,23 @@ export default function Header() {
           <Link 
             href="/" 
             className="hover:opacity-80 transition-opacity duration-300"
+            aria-label="S. B. Lennox Home"
           >
-            <Image
-              src="/books/logosb.jpg"
-              alt="S. B. Lennox"
-              width={120}
-              height={40}
-              className="h-10 w-auto"
-              priority
-            />
+            {!imageError ? (
+              <Image
+                src="/books/logosb.jpg"
+                alt="S. B. Lennox"
+                width={200}
+                height={60}
+                className="w-[140px] md:w-[180px] h-auto object-contain"
+                priority
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <span className="font-display text-2xl md:text-3xl font-bold text-redAccent">
+                S. B. Lennox
+              </span>
+            )}
           </Link>
           
           <ul className="flex space-x-8">

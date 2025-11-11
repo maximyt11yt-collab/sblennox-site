@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   const socialLinks = [
@@ -45,8 +46,15 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
-            <p className="font-display text-redAccent text-lg mb-2">S. B. Lennox</p>
-            <p className="text-gray-600 text-sm">Romance Author</p>
+            <Link href="/" className="inline-block hover:opacity-80 transition-opacity duration-300">
+              <Image
+                src="/books/logosb.jpg"
+                alt="S. B. Lennox"
+                width={160}
+                height={48}
+                className="w-40 h-auto object-contain"
+              />
+            </Link>
           </div>
           
           <div className="flex items-center space-x-6">

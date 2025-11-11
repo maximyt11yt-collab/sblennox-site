@@ -42,7 +42,7 @@ export default function BookCard({
           )}
         </div>
         
-        <div className="p-4">
+        <div className="p-3">
           <h3 className="font-display text-lg font-bold text-black mb-1.5 group-hover:text-redAccent transition-colors duration-300">
             {title}
           </h3>
