@@ -153,7 +153,7 @@ that she forgot…
 or that I never can.`,
     releaseDate: "2025",
     pages: undefined,
-    coverImage: "/books/IMG_2618.JPG",
+    coverImage: "/books/IMG_4385.PNG",
     link: "https://www.amazon.com/Kiss-Like-Didnt-Kill-You-ebook/dp/B0DL3HC2QD",
     amazonUrl: "https://www.amazon.com/Kiss-Like-Didnt-Kill-You-ebook/dp/B0DL3HC2QD",
   },

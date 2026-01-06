@@ -13,8 +13,8 @@ export const upcoming: Upcoming[] = [
   {
     slug: "kiss-me-like-you-didnt-break-me",
     title: "Kiss Me Like You Didn't Break Me",
-    coverImage: "/upcoming/upcomingnew.JPG",
-    tagline: "Title reveal — details coming soon.",
+    coverImage: "/upcoming/IMG_4384.PNG",
+    tagline: "Title reveal — Kiss Me Like You Didn't Break Me",
   },
 ];
 
